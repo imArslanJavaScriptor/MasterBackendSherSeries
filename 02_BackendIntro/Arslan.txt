@@ -1,0 +1,1 @@
+Arslan is a King This Extended Text is comming from fs.WriteFile but it ads next to previous one
