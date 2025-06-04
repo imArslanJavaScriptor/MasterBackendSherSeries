@@ -1,1 +1,0 @@
-console.log("Script file comming from Public Directory")
