@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FullStack Task Manager</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="text-white bg-zinc-900 w-full">
+    <div
+      class="min-h-screen flex item-center justify-center p-4 flex-col gap-4 max-w-[1400px] w-full mx-auto"
+    >
+      <h1 class="text-center text-white text-4xl font-bold">
+        FullStack Task Manager App
+      </h1>
+      <!-- Form Section -->
+      <form
+        action="/create"
+        method="post"
+        class="w-full mx-auto bg-zinc-800 p-3 rounded shadow"
+      >
+        <div class="mb-4">
+          <input
+            type="text"
+            name="title"
+            placeholder="Enter Task Title"
+            class="w-full bg-zinc-700 outline-none rounded-[4px] p-2"
+          />
+        </div>
+        <div class="mb-4">
+          <textarea
+            name="description"
+            placeholder="Enter Task Description"
+            rows="4"
+            class="w-full bg-zinc-700 outline-none rounded-[4px] p-2 resize-none"
+          ></textarea>
+        </div>
+        <input
+          type="submit"
+          name=""
+          id=""
+          value="Create Task"
+          class="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 text-sm cursor-pointer"
+        />
+      </form>
+      <!-- Tasks Cards Section -->
+      <div id="cardsContainer" class="tasks w-full flex flex-wrap gap-5">
+        <% if(files.length > 0 ) { %> <% files.forEach(function(val) { %>
+        <div class="task bg-zinc-800 p-3 rounded-[4px] min-w-[250px]">
+          <h3 class="text-xl font-semibold"><%=val %></h3>
+          <!-- Edit Delete Buttons -->
+          <div class="flex item-center gap-3 mt-2">
+            <a
+              href="/file/<%= val %>"
+              class="inline-block bg-blue-500 min-w-[50px] rounded-[4px] p-1 text-sm"
+              >Read More</a
+            >
+            <a
+              href="/edit/<%= val %>"
+              class="bg-green-600 min-w-[50px] rounded-[4px] p-1 text-sm inline-block"
+              >Edit Task Name</a
+            >
+            <form
+              action="/delete"
+              method="POST"
+            >
+              <input type="hidden" name="filename" value="<%= val %>" />
+              <button
+                type="submit"
+                class="bg-red-500 min-w-[50px] rounded-[4px] p-1 text-sm inline-block"
+              >
+                Delete Task
+              </button>
+            </form>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <h3 class="text-2xl text-zinc-600 font-medium">No Tasks Found</h3>
+        <% } %>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
