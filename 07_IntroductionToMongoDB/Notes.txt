@@ -1,0 +1,30 @@
+Data Storages:
+Aisa kuch jaha pr hum saare users ki info store kr skte hai.
+
+Types of DBS:
+SQL Databases | NoSQL Databases:
+SQL Databases: Where data stored in tabular form
+NoSQL Databases: Where data stored in the from of objects
+Currently we Learn About NoSQL Databases and we use MongoDB for it.
+
+What and why:
+in order to store data we need a database and for this we are using MongoDB.
+The Application Server does all the Job exaept data related one when it needs to perform any data related task so then DataBase Server job in action.
+
+Note: When we talk about Backend so it contains Application Server and DataBase Server
+
+Terminologies:
+Collection, Documents, Schemas, Keys, Modals
+
+Collection:
+hamare 1 project me for example VideoStreaming Platform ma bohot sare alag alag data mojod ho skte ha like Users, sales, subscription, ads, revenue etc so in sabhi data ko hum ko hum naam dega Collections ka.
+
+Documents:
+for example agr ab Users ka deta dekh rhe ha to us ma bohot sare users honge so agr un ma sa kisi 1 user ka data chahye hoga to us 1 user ka data ko hum khe ga document.
+
+
+CODE                        DATABASE
+-------------------------------------------
+mongoose.connect -->        dataBase create  
+modal create     -->        collection create
+CREATE           -->        document
